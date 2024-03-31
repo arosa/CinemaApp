@@ -1,0 +1,26 @@
+﻿@model AddTheaterViewModel
+@{
+}
+
+<form method="post" action="Add">
+  <div class="mb-3">
+    <label for="" class="form-label">Name</label>
+    <input type="text" class="form-control" asp-for="Name">
+  </div><div class="mb-3">
+    <label for="" class="form-label">City</label>
+    <input type="text" class="form-control" asp-for="City">
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Ticket Price</label>
+    <input type="double" class="form-control" asp-for="TicketPrice">
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Open Hours From</label>
+    <input type="Time" class="form-control" asp-for="OpenHoursFrom">
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Open Hours To</label>
+    <input type="Time" class="form-control" asp-for="OpenHoursTo">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
