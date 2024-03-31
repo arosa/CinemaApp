@@ -1,0 +1,31 @@
+﻿@model List<CinemaApp.Models.Domain.Theater>
+@{
+}
+
+<h1>Theaters</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Ticket Price</th>
+            <th>Opening Time</th>
+            <th>Closing Time</th>
+            <th> Theater Details</th>
+        </tr>
+    <thead>
+        <tbody>
+            @foreach (var theater in Model)
+                {
+                    <tr>
+                        <td>@theater.Name</td>
+                        <td>@theater.City</td>
+                        <td>@theater.TicketPrice.ToString("0.00") €</td>
+                        <td>@theater.OpenHoursFrom.ToString("hh:mm tt")</td>
+                        <td>@theater.OpenHoursTo.ToString("hh:mm tt")</td>
+                        <td><a href="Theaters/View/@theater.Id">View</a></td>
+                    </tr>
+                }
+        </tbody>
+</table>
