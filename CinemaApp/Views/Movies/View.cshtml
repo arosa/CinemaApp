@@ -1,3 +1,23 @@
-﻿@model UpdateMovieViewModel
+﻿@model IndexMovieViewModel
 @{
 }
+
+<h1>Movie Details</h1>
+<form method="post" action="View" class="mt-5">
+  <div class="mb-3">
+    <label for="Name" class="form-label">Name</label>
+    <input type="text" class="form-control" asp-for="Name" readonly>
+  </div><div class="mb-3">
+    <label for="TheaterName" class="form-label">Theater</label>
+    <input type="text" class="form-control" asp-for="TheaterName" readonly>
+  </div>
+  <div class="mb-3">
+    <label for="PremiereDate" class="form-label">Premiere Date</label>
+    <input type="date" class="form-control" asp-for="PremiereDate" readonly>
+  </div>
+  <div class="mb-3">
+    <label for="FinalDate" class="form-label">Final Date</label>
+    <input type="date" class="form-control" asp-for="FinalDate" readonly>
+  </div>
+  <button type="submit" class="btn btn-primary" onClick="history.go(-1); return false;">Back</button>
+</form>

@@ -1,4 +1,4 @@
-﻿@model List<CinemaApp.Models.Domain.Movie>
+﻿@model List<IndexMovieViewModel>
 @{
 }
 
@@ -7,22 +7,25 @@
 <table class="table">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Name</th>
             <th>Theater</th>
             <th>Premiere Date</th>
             <th>Final Date</th>
+            <th>Movie Details</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var movie in Model)
         {
             <tr>
-                <td>@movie.Id</td>
                 <td>@movie.Name</td>
-                <td>@movie.Theater.Name</td>
+                <td>@movie.TheaterName</td>
                 <td>@movie.PremiereDate.ToString("dd-MM-yyyy")</td>
-                    <td>@movie.FinalDate.ToString("dd-MM-yyyy")</td>
+                <td>@movie.FinalDate.ToString("dd-MM-yyyy")</td>
+                <td>
+                    <a href="Movies/Edit/@movie.Id">Edit</a>
+                    <a href="Movies/View/@movie.Id">View</a>
+                </td>
             </tr>
         }
     </tbody>

@@ -12,6 +12,6 @@ namespace CinemaApp.Data
 
         public DbSet<Theater> Theaters { get; set; }
         public DbSet<Movie> Movies { get; set; }
-
+        public DbSet<Session> Sessions { get; set; }
     }
 }

@@ -1,17 +1,12 @@
-﻿using CinemaApp.Models.Domain;
-
-namespace CinemaApp.Models
+﻿namespace CinemaApp.Models
 {
-    public class UpdateMovieViewModel
+    public class IndexMovieViewModel
     {
-
         public Guid Id { get; set; }
-        public string Name { get; set; }
-        public Guid TheaterID { get; set; }
+        public required string Name { get; set; }
+        public required Guid TheaterID { get; set; }
         public DateTime PremiereDate { get; set; }
         public DateTime FinalDate { get; set; }
-
         public string TheaterName { get; set; }
-
     }
 }
