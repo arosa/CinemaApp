@@ -2,31 +2,26 @@
 @{
 }
 
-<h1>Edit Theater</h1>
+<h1>View Theater</h1>
 <form method="post" action="View" class="mt-5">
   <div class="mb-3">
-    <label for="" class="form-label">ID</label>
-    <input type="text" class="form-control" asp-for="Id" readonly>
+    <label for="Name" class="form-label">Name</label>
+    <input type="text" class="form-control" asp-for="Name" readonly>
   </div><div class="mb-3">
-  <div class="mb-3">
-    <label for="" class="form-label">Name</label>
-    <input type="text" class="form-control" asp-for="Name">
-  </div><div class="mb-3">
-    <label for="" class="form-label">City</label>
-    <input type="text" class="form-control" asp-for="City">
+    <label for="City" class="form-label">City</label>
+    <input type="text" class="form-control" asp-for="City" readonly>
   </div>
   <div class="mb-3">
-    <label for="" class="form-label">Ticket Price</label>
-    <input type="double" class="form-control" asp-for="TicketPrice">
+    <label for="TicketPrice" class="form-label">Ticket Price</label>
+    <input type="double" class="form-control" data-format="{0:C}" data-comma="." data-decimal="," data-symbol="€" asp-for="TicketPrice" readonly>
   </div>
   <div class="mb-3">
-    <label for="" class="form-label">Opening Time</label>
-    <input type="Time" class="form-control" asp-for="OpenHoursFrom">
+    <label for="OpenHoursFrom" class="form-label">Opening Time</label>
+    <input type="Time" class="form-control" asp-for="OpenHoursFrom" readonly>
   </div>
   <div class="mb-3">
-    <label for="" class="form-label">Closing Time</label>
-    <input type="Time" class="form-control" asp-for="OpenHoursTo">
+    <label for="OpenHoursTo" class="form-label">Closing Time</label>
+    <input type="Time" class="form-control" asp-for="OpenHoursTo" readonly>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-      <button type="delete" class="btn btn-danger" asp-action="Delete" asp-controller="Theaters">Delete</button>
+  <button type="submit" class="btn btn-primary" onClick="history.go(-1); return false;">Back</button>
 </form>

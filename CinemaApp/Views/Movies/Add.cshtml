@@ -1,0 +1,41 @@
+﻿@model AddMovieViewModel
+@{
+}
+
+<h1>Add New Movie</h1>
+<form method="post" action="Add" class="mt-5">
+  <div class="mb-3">
+    <label for="" class="form-label">Name</label>
+    <input type="text" class="form-control" asp-for="Name">
+  </div>
+  <div class="mb-3">
+    <label for="Theater" class="form-label">Select Theater</label>
+    <select asp-for="Theater" class="form-control" asp-items="ViewBag.Theaters"></select>
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Premiere Date</label>
+    <input type="date" class="form-control" asp-for="PremiereDate">
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Final Date</label>
+    <input type="date" class="form-control" asp-for="FinalDate" >
+  </div>
+  
+  <button type="submit" class="btn btn-primary" onclick="validateDates()" asp-action="">Submit</button>
+
+</form>
+
+
+<script>
+    function validateDates() {
+        var premiereDate = new Date(document.getElementById("PremiereDate").value);
+        var finalDate = new Date(document.getElementById("FinalDate").value);
+
+        if (finalDate <= premiereDate) {
+            document.getElementById("error").innerHTML = "Final Date must be after Premiere Date";
+        } else {
+            document.getElementById("error").innerHTML = "";
+            document.getElementById("myForm").submit();
+        }
+    }
+</script>

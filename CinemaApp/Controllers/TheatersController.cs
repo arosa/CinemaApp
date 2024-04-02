@@ -48,7 +48,7 @@ namespace CinemaApp.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> View(Guid ID)
+        public async Task<IActionResult> Edit(Guid ID)
         {
             var theater = await mvc.Theaters.FirstOrDefaultAsync(x => x.Id == ID);
 
@@ -63,13 +63,13 @@ namespace CinemaApp.Controllers
                     OpenHoursFrom = theater.OpenHoursFrom,
                     OpenHoursTo = theater.OpenHoursTo
                 };
-                return await Task.Run(() => View("View",viewModel));
+                return await Task.Run(() => View("Edit",viewModel));
             }
             return RedirectToAction("Index");
         }
 
         [HttpPost]
-        public async Task<IActionResult> View(UpdateTheaterViewModel model)
+        public async Task<IActionResult> Edit(UpdateTheaterViewModel model)
         {
             var rec = await mvc.Theaters.FindAsync(model.Id);
 
@@ -86,6 +86,27 @@ namespace CinemaApp.Controllers
                 return RedirectToAction("Index");
             }
 
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> View(Guid ID)
+        {
+            var theater = await mvc.Theaters.FirstOrDefaultAsync(x => x.Id == ID);
+
+            if (theater != null)
+            {
+                var viewModel = new UpdateTheaterViewModel()
+                {
+                    Id = theater.Id,
+                    Name = theater.Name,
+                    City = theater.City,
+                    TicketPrice = theater.TicketPrice,
+                    OpenHoursFrom = theater.OpenHoursFrom,
+                    OpenHoursTo = theater.OpenHoursTo
+                };
+                return await Task.Run(() => View("View", viewModel));
+            }
             return RedirectToAction("Index");
         }
 

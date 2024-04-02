@@ -1,0 +1,34 @@
+﻿@model UpdateTheaterViewModel
+@{
+}
+
+<h1>Edit Theater</h1>
+<form method="post" action="Edit" class="mt-5">
+  <div class="mb-3">
+    <label for="" class="form-label">ID</label>
+    <input type="text" class="form-control" asp-for="Id" readonly>
+  </div><div class="mb-3">
+  <div class="mb-3">
+    <label for="" class="form-label">Name</label>
+    <input type="text" class="form-control" asp-for="Name">
+  </div><div class="mb-3">
+    <label for="" class="form-label">City</label>
+    <input type="text" class="form-control" asp-for="City">
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Ticket Price</label>
+    <input type="double" class="form-control" asp-for="TicketPrice">
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Opening Time</label>
+    <input type="Time" class="form-control" asp-for="OpenHoursFrom">
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Closing Time</label>
+    <input type="Time" class="form-control" asp-for="OpenHoursTo">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="delete" class="btn btn-danger" asp-action="Delete" asp-controller="Theaters">Delete</button>
+        <button type="submit" class="btn btn-primary" onClick="history.go(-1); return false;">Back</button>
+
+</form>

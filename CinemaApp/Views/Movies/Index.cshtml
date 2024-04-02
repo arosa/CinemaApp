@@ -1,0 +1,29 @@
+﻿@model List<CinemaApp.Models.Domain.Movie>
+@{
+}
+
+<h1>Movies</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Theater</th>
+            <th>Premiere Date</th>
+            <th>Final Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model)
+        {
+            <tr>
+                <td>@movie.Id</td>
+                <td>@movie.Name</td>
+                <td>@movie.Theater.Name</td>
+                <td>@movie.PremiereDate.ToString("dd-MM-yyyy")</td>
+                    <td>@movie.FinalDate.ToString("dd-MM-yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>

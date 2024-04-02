@@ -24,7 +24,10 @@
                         <td>@theater.TicketPrice.ToString("0.00") €</td>
                         <td>@theater.OpenHoursFrom.ToString("hh:mm tt")</td>
                         <td>@theater.OpenHoursTo.ToString("hh:mm tt")</td>
-                        <td><a href="Theaters/View/@theater.Id">View</a></td>
+                        <td>
+                            <a href="Theaters/Edit/@theater.Id">Edit</a>
+                            <a href="Theaters/View/@theater.Id">View</a>
+                        </td>
                     </tr>
                 }
         </tbody>
